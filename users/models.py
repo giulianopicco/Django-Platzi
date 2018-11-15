@@ -16,9 +16,9 @@ class Profile(models.Model):
 
   picture = models.ImageField(upload_to='users/pictures', blank=True, null=True)
 
-  created = models.TimeField(auto_now_add=True)
-  modified = models.TimeField(auto_now=True)
+  created = models.DateTimeField(auto_now_add=True)
+  modified = models.DateTimeField(auto_now=True)
 
   def __str__(self):
-    return self.user.field_name
+    return self.user.first_name
 
