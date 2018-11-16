@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 
+from django.contrib.auth.decorators import login_required
+
 #Utilities
 from datetime import datetime
 
@@ -49,6 +51,8 @@ posts = [
 #   return HttpResponse('<br>'.join(content)) #here <br> is the separator of the list to be joined
 
 # render from template
+
+@login_required
 def list_posts(request):
   return render(request, 'posts/feed.html', {'posts':posts})
 
