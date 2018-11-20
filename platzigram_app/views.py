@@ -2,9 +2,14 @@
 from django.http import HttpResponse
 from django.http import JsonResponse
 import json
+from django.shortcuts import render, redirect
 
 #Utilities
 from datetime import datetime
+
+def index(request):
+  return redirect('feed')
+
 
 def hello_world(request):
   """Return a greeting"""
