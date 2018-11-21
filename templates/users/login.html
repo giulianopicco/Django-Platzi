@@ -19,16 +19,17 @@
     {% csrf_token %}
     <div class="form-group">
       <div class="form-group">
-        <label for="">User name</label>
         <input type="text"
-          class="form-control" name="username" id="id_usuario" autofocus>
-        <label for="">User password</label>
+          class="form-control" name="username" id="id_usuario" autofocus placeholder="User name">
         <input type="password"
-          class="form-control" name="password" id="id_password">
+          class="form-control mt-3" name="password" id="id_password" placeholder="User password">
       </div>
       <button class="btn btn-primary btn-block mt-5" type="submit">Sing in</button>
     </div>
   </form>
+
+  <p class="mt-4">Don't have an account yet? <a href="{% url "signup" %}">Sign up here.</a></p>
+  
   <!-- <script>
       var error = '{{ error }}';
       console.log('error', error)

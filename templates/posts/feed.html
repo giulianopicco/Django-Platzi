@@ -11,10 +11,10 @@
         <div class="card mb-3 shadow">
           <div class="card-body">
             <h4 class="card-title">{{post.title}}</h4>
-            <small class="card-text">{{post.timestamp}}</small>
+            <small class="card-text">{{post.created}}</small>
           </div>
-          <img class="card-img-top img-fluid" src="{{post.photo}}" alt="">
-          <p class="card-text text-right m-3">by {{post.user.name}} <span><img class="rounded-circle ml-3" src="{{post.user.picture}}" alt=""></p>
+          <img class="card-img-top img-fluid" src="{{post.photo.url}}" alt="">
+          <p class="card-text text-right m-3">by {{post.user.get_full_name}} <span><img class="rounded-circle ml-3" height="50" width="50" src="{{post.profile.picture.url}}" alt=""></p>
         </div>
         <br>
       </div>

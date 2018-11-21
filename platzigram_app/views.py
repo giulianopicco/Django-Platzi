@@ -7,9 +7,6 @@ from django.shortcuts import render, redirect
 #Utilities
 from datetime import datetime
 
-def index(request):
-  return redirect('feed')
-
 
 def hello_world(request):
   """Return a greeting"""
