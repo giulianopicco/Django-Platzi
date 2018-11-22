@@ -1,24 +1,31 @@
-"""User models"""
+"""Users models."""
 
 # Django
 from django.contrib.auth.models import User
 from django.db import models
+from django.utils import timezone
 
 
 class Profile(models.Model):
-  """Profile Model"""
+    """Profile model.
 
-  user = models.OneToOneField(User, on_delete=models.CASCADE)
+    Proxy model that extends the base data with other
+    information.
+    """
 
-  website = models.URLField(max_length=200, blank=True)
-  biography = models.TextField(blank=True)
-  phone_number = models.CharField(max_length=20, blank=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-  picture = models.ImageField(upload_to='users/pictures', blank=True, null=True)
+    website = models.URLField(max_length=200, blank=True)
+    biography = models.TextField(blank=True)
+    phone_number = models.CharField(max_length=20, blank=True)
 
-  created = models.DateTimeField(auto_now_add=True)
-  modified = models.DateTimeField(auto_now=True)
+    picture = models.ImageField(
+        upload_to='users/pictures',
+    )
 
-  def __str__(self):
-    return self.user.first_name
+    created = models.DateTimeField(blank=True, null=True)
+    modified = models.DateTimeField(blank=True, null=True)
 
+    def __str__(self):
+        """Return username."""
+        return self.user.username

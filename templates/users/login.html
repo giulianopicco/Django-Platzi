@@ -15,7 +15,7 @@
 
     
 
-  <form method="POST" action="{% url "login" %}">
+  <form method="POST" action="{% url "users:login" %}">
     {% csrf_token %}
     <div class="form-group">
       <div class="form-group">
@@ -28,10 +28,6 @@
     </div>
   </form>
 
-  <p class="mt-4">Don't have an account yet? <a href="{% url "signup" %}">Sign up here.</a></p>
+  <p class="mt-4">Don't have an account yet? <a href="{% url "users:signup" %}">Sign up here.</a></p>
   
-  <!-- <script>
-      var error = '{{ error }}';
-      console.log('error', error)
-    </script> -->
 {% endblock %}
