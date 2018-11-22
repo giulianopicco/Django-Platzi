@@ -14,7 +14,7 @@
             <div class="col-sm-8">
                 <h2 style="font-weight: 100;">
                     {{ user.username }}
-                    {% if user == user %}
+                    {% if request.user == user %}
                         <a
                             href="{% url "users:update" %}"
                             class="ml-5 btn btn-sm btn-outline-info"
@@ -51,5 +51,21 @@
     </div>
 
     <hr>
+
+        <div class="container">
+
+            <div class="row">
+            {% for post in posts %}
+              <div class="col-4">
+                <div class="card mb-3 shadow">
+                  <img class="card-img-top img-fluid" src="{{post.photo.url}}" a-top >
+                </div>
+                <br>
+              </div>
+            {% endfor %}
+            </div>
+
+        </div>
+
 
 {% endblock %}
