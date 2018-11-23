@@ -1,0 +1,15 @@
+<div class="col-lg-6 offset-3">
+    <div class="card shadow">
+        <div class="card-body">
+            <h4 class="card-title">{{ post.title }}</h4>
+            <small class="card-text">{{ post.created }}</small>
+        </div>
+        <img class="card-img-top img-fluid" src="{{ post.photo.url }}" alt="">
+        <p class="card-text text-right m-3">by {{ post.user.get_full_name }} <span>
+  <a href="{% url "users:detail" post.user.username %}"><img class="rounded-circle ml-3" height="50"
+                                                             width="50" src="{{ post.profile.picture.url }}"
+                                                             alt=""></a>
+        </p>
+    </div>
+    <br>
+</div>

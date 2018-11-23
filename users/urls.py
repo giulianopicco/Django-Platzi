@@ -9,12 +9,7 @@ from users import views
 
 urlpatterns = [
 
-    # Posts
-    path(
-        route='<str:username>/',
-        view=views.UserDetailView.as_view(),
-        name='detail'
-    ),
+
 
     # Management
     path(
@@ -29,13 +24,20 @@ urlpatterns = [
     ),
     path(
         route='signup/',
-        view=views.signup,
+        view=views.SignupView.as_view(),
         name='signup'
     ),
     path(
         route='me/profile/',
-        view=views.update,
+        view=views.UpdateProfileView.as_view(),
         name='update'
-    )
+    ),
+
+    # Posts
+    path(
+        route='<str:username>/',
+        view=views.UserDetailView.as_view(),
+        name='detail'
+    ),
 
 ]

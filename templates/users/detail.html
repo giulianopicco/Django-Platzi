@@ -12,7 +12,7 @@
                 <img src="{{ user.profile.picture.url }}" alt="@{{ user.username}}" class="rounded-circle" width="150px" height="150px" />
             </div>
             <div class="col-sm-8">
-                <h2 style="font-weight: 100;">
+                    <h2 style="font-weight: 100;">
                     {{ user.username }}
                     {% if request.user == user %}
                         <a
@@ -58,7 +58,9 @@
             {% for post in posts %}
               <div class="col-4">
                 <div class="card mb-3 shadow">
-                  <img class="card-img-top img-fluid" src="{{post.photo.url}}" a-top >
+                    <a href="{% url "posts:detail" post.pk %}" class="border">
+                        <img class="card-img-top img-fluid" src="{{post.photo.url}}" a-top >
+                    </a>
                 </div>
                 <br>
               </div>
