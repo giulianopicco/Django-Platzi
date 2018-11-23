@@ -146,3 +146,6 @@ MEDIA_URL = '/media/'
 
 LOGIN_URL = '/users/login'
 SIGNUP_URL = '/users/signup'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = LOGIN_URL
